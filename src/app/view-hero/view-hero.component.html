@@ -1,0 +1,11 @@
+<h1>View Selected Hero Details Here!</h1>
+debugger;
+<div *ngIf="heroDetails">
+  <h2>{{ heroDetails.name }}</h2>
+  <p><strong>Hero Name:</strong> {{ heroDetails.heroName }}</p>
+  <p><strong>Hero Age:</strong> {{ heroDetails.heroAge }}</p>
+  <p><strong>Hero Power:</strong> {{ heroDetails.heroPower }}</p>
+</div>
+<div *ngIf="!heroDetails">
+  <p>No hero details available.</p>
+</div>

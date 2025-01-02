@@ -9,15 +9,15 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+  <tr *ngFor="let hero of heroes; index as i; trackBy: trackByFn">
+    <td>{{hero.name}}</td>
+    <td>{{hero.heroName}}</td>
+    <td>{{hero.heroAge}}</td>
+    <td>{{hero.heroPower}}</td>
     <td>
-      <a href="#" class="action-link">Edit</a> |
-      <a href="#" class="action-link">View</a> |
-      <a href="#" class="action-link delete">Delete</a>
+      <a [routerLink] = "" class="action-link">Edit</a> |
+      <a [routerLink] = "['viewheroes', hero.name]" class="action-link">View</a> |
+      <a [routerLink] = "" class="action-link delete">Delete</a>
     </td>
   </tr>
   </tbody>
