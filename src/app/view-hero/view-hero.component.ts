@@ -14,16 +14,26 @@ import {NgIf} from '@angular/common';
 })
 export class ViewHeroComponent implements OnInit{
   heroName: string | null = "";
-   heroDetails : Hero | null | undefined;
+   heroDetails : Hero  | undefined | null;
 
   constructor(private route: ActivatedRoute, private service: HeroServiceService) {
-    // this.heroName = this.route.snapshot.paramMap.get('name');
+
   }
 
   ngOnInit(): void {
     this.heroName = this.route.snapshot.paramMap.get('name');
+    console.log(this.heroName);
+
     if (this.heroName) {
-      this.heroDetails = this.service.getHeroes().find(hero => hero.heroName === this.heroName) || null;
+      const heroes = this.service.getHeroes();
+      console.log('All Heroes:', heroes);
+
+      const foundHero = heroes.find(hero => hero.name.toLowerCase() === this.heroName?.toLowerCase());
+
+      // this.heroDetails = this.service.getHeroes().find(hero => hero.heroName === this.heroName);
+      console.log(foundHero);
+
+      this.heroDetails = foundHero;
     }
     }
 

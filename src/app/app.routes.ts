@@ -11,7 +11,8 @@ export const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'news', component: NewsComponent},
   {path: 'aboutus', component: AboutComponent},
+  {path: 'viewheroes/:name', component: ViewHeroComponent},
+  // {path: 'viewheroes/:name', component: ViewHeroComponent}
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PasgenotfoundComponent},
-  {path: 'viewheroes/:id', component: ViewHeroComponent}
 ];
